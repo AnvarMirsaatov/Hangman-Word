@@ -1,0 +1,40 @@
+.btn {
+  background: none;
+  border: 3px solid black;
+  aspect-ratio: 1/1;
+  font-size: 2.5rem;
+  padding: 0.5em;
+  text-transform: uppercase;
+  width: 100%;
+  color: black;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: ease 0.5s;
+}
+
+.btn.active {
+  padding: 0.499rem;
+  background-color: hsl(201, 73%, 75%);
+}
+
+.btn.inactive {
+  opacity: 0.3;
+}
+
+.btn:hover:not(datalist),
+.btn:focus:not(datalist) {
+  background-color: hsl(201, 73%, 50%);
+}
+
+.nextBtn {
+  /* style={{ padding: "10px 20px", fontSize: "2rem", borderRadius: "3rem", }} */
+  padding: 10px 20px;
+  font-size: 2rem;
+  border-radius: 3rem;
+  background: #fff;
+}
+.nextBtn:active {
+  background: #f1f1f1;
+  transform: scale(10px);
+}

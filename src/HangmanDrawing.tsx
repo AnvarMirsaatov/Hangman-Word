@@ -33,7 +33,7 @@ const Right_arm = (
             position: 'absolute',
             top: '150px',
             right: '10px',
-            rotate: '30deg',
+            transform: 'rotate(30deg)',
             transformOrigin: 'right bottom'
         }}
     ></div>
@@ -47,7 +47,7 @@ const Left_arm = (
             position: 'absolute',
             top: '150px',
             right: '-100px',
-            rotate: '-30deg',
+            transform: 'rotate(-30deg)',
             transformOrigin: 'left bottom'
         }}
     ></div>
@@ -61,7 +61,7 @@ const Left_leg = (
             position: 'absolute',
             top: '210px',
             right: 0,
-            rotate: '-60deg',
+            transform: 'rotate(-60deg)',
             transformOrigin: 'right bottom'
         }}
     ></div>
@@ -75,21 +75,21 @@ const Right_leg = (
             position: 'absolute',
             top: '210px',
             right: '-110px',
-            rotate: '60deg',
+            transform: 'rotate(60deg)',
             transformOrigin: 'left bottom'
         }}
     ></div>
 )
 
-export function HangmanDrawing() {
+const bodyParts = [Head, Body, Left_arm, Right_arm, Left_leg, Right_leg]
+type HangmanDrawingProps = {
+    numberOfGuesses: number
+}
+export function HangmanDrawing({ numberOfGuesses }: HangmanDrawingProps) {
     return (
         <div style={{ position: 'relative' }}>
-            {Head}
-            {Body}
-            {Right_arm}
-            {Left_arm}
-            {Right_leg}
-            {Left_leg}
+            {bodyParts.slice(0, numberOfGuesses)}
+
             <div
                 style={{
                     position: 'absolute',
@@ -117,7 +117,7 @@ export function HangmanDrawing() {
                 }}
             />
             <div
-                style={{ height: '10px', width: '250px ', backgroundColor: '#000' }}
+                style={{ height: '10px', width: '250px', backgroundColor: '#000' }}
             />
         </div>
     )
