@@ -83,8 +83,9 @@ function App() {
           )}
           inactiveLetters={incurrectLetters}
           addGuessedLetters={addGuessedLetters}
-          disabled={(isWinner || isLoser)}
+          disabled={isWinner || isLoser}
         />
+
       </div>
       <div
         style={{
