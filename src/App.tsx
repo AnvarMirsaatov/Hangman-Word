@@ -6,9 +6,10 @@ import { KeyBoard } from './KeyBoard'
 import style from './keyBoard.module.css'
 
 function App() {
-  const [currentItem, setCurrentItem] = useState(() => {
-    return words[Math.floor(Math.random() * words.length)]
-  })
+const [currentItem] = useState(() => {
+  return words[Math.floor(Math.random() * words.length)]
+})
+
 
   const wordToGuess = currentItem.word
   const question = currentItem.question
